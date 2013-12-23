@@ -1,0 +1,8 @@
+<ul class="nav nav-pills nav-stacked pull-left">
+     <?php
+     // iterate through the pages
+     foreach ($this->container as $key => $page):
+         ?>
+         <li><a href="<?php echo $page->getHref(); ?>"><?php echo $page->getLabel(); ?></a></li>
+         <?php endforeach; ?>
+ </ul>
