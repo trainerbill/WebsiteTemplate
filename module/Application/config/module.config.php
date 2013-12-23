@@ -20,6 +20,16 @@ return array(
                     ),
                 ),
             ),
+        	'contactus' => array(
+                'type' => 'Zend\Mvc\Router\Http\Literal',
+                'options' => array(
+                    'route'    => '/contactus',
+                    'defaults' => array(
+                        'controller' => 'Application\Controller\Contact',
+                        'action'     => 'index',
+                    ),
+                ),
+            ),
             // The following is a route to simplify getting started creating
             // new controllers and actions without needing to create a new
             // module. Simply drop new controllers in, and you can access them
@@ -60,6 +70,9 @@ return array(
         'aliases' => array(
             'translator' => 'MvcTranslator',
         ),
+        'factories' => array(
+        		'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
+        ),
     ),
     'translator' => array(
         'locale' => 'en_US',
@@ -73,7 +86,8 @@ return array(
     ),
     'controllers' => array(
         'invokables' => array(
-            'Application\Controller\Index' => 'Application\Controller\IndexController'
+            'Application\Controller\Index' => 'Application\Controller\IndexController',
+            'Application\Controller\Contact' => 'Application\Controller\ContactController'
         ),
     ),
     'view_manager' => array(
@@ -84,6 +98,7 @@ return array(
         'exception_template'       => 'error/index',
         'template_map' => array(
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/carousel'           => __DIR__ . '/../view/layout/carousel.phtml',
             'application/index/index' => __DIR__ . '/../view/application/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
@@ -98,5 +113,21 @@ return array(
             'routes' => array(
             ),
         ),
+    ),
+    
+    'navigation' => array(
+    		'default' => array(
+    				array(
+    						'label' => 'Home',
+    						'route' => 'home',
+    				),
+    				
+    				'contactus'=>array(
+    						'label' => 'Contact Us',
+    						'module'     => 'application',
+    						'route' => 'contactus',
+    
+    				),
+    		),
     ),
 );
