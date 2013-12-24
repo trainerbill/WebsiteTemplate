@@ -4,3 +4,9 @@
 [submodule "module/Main"]
 	path = module/Main
 	url = https://github.com/trainerbill/ZF2-Restful-Module-Skeleton.git
+[submodule "vendor/ZfcBase"]
+	path = vendor/ZfcBase
+	url = https://github.com/ZF-Commons/ZfcBase.git
+[submodule "vendor/ZfcTwitterBootstrap"]
+	path = vendor/ZfcTwitterBootstrap
+	url = https://github.com/mwillbanks/ZfcTwitterBootstrap.git
